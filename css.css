@@ -1,0 +1,225 @@
+/*généralité*/
+body{
+    font-size: 1rem;
+    min-width: 360px;
+}
+
+/*header*/
+/*masquer des éléments du header*/
+.img-user,.search-bar,.fa-bars{
+    display: none;
+}
+
+header{
+    /*border: 1px solid red;*/
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    }
+
+    form{
+        /*border: 1px solid black;*/
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        justify-content: end;
+    }
+
+    .ul-header-right{
+        /*border: 1px solid black;*/
+        grid-column: 2;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .ul-header-right li{
+        /*border: 1px solid black;*/
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+/*main******************/
+.nav-main{
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.ul-nav-main-videos{
+    grid-column: 1;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    gap:30px
+}
+
+/*positionnement des éléments dans .div-li*/
+.div-li{
+    padding-top: 6px;
+    display: flex;
+    gap: 2%;
+}
+
+/*dimensionnement de l'image*/
+.div-li>img{
+    width: 36px;
+    height: 36px;
+}
+
+.descrip-video,.div-li div img{
+    display:inline;
+}
+
+hr{
+    display: none;
+}
+
+.img-a-li-ul-nav-main-videos{
+    width: 100%;
+}
+
+/*rendre div-nav-main tout le temps visible en bas du navigateur*/
+.div-nav-main{
+    background-color: aliceblue;
+    border-top: 1px solid grey;
+    position:fixed;
+    bottom: 0vh;
+    width: 100%;
+}
+
+.nav-down{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-down a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.nav-aside,footer{
+    display: none;
+}
+/*responsive*/
+@media screen and (max-width:799px) {
+    .fa-magnifying-glass{
+        border: none;
+    }
+}
+
+@media screen and (min-width:800px) {
+    /*redefinir la grille header*/
+    header{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    /*réafficher les éléments de form et ul-header-right*/
+    .img-user,.search-bar,.fa-bars{
+        display: inline;
+    }
+
+    .nav-header-left{
+        padding-left: 7%;
+        display: flex;
+        align-items: center;
+        gap: 2%;
+    }
+
+    /*positionnement de form*/
+    form{
+        justify-content: center;
+    }
+
+    .search-bar{
+        width: 80%;
+    }
+
+    .fa-magnifying-glass{
+        width: 60px;
+    }
+
+    /*position de ul-header-right*/
+    .ul-header-right{
+        padding-right: 7%;
+        grid-column: 3;
+        display: flex;
+        justify-content: end;
+        gap: 8%;
+    }
+
+    .nav-main{
+        padding-top: 4%;
+    }
+}
+
+@media screen and (min-width:1024px){
+    /*masquer la div-nav-main*/
+    .div-nav-main{
+        display: none;
+    }
+
+     /*définir la grille de main*/
+     main{
+        /*border: 1px solid red;*/
+        padding-right: 2%;
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+    }
+
+    /*positionnement de nav-main*/
+    .nav-main{
+        /*border: 1px solid red;*/
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    /*position du aside et définition en flexbox*/
+    aside{
+        position:fixed;
+        width:15%;
+        top:7%;
+        bottom: 10px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    hr{
+        display: block;
+    }
+
+    /*réafficher les éléments de .nav-aside et positionnement de ses éléments et positionnement de footer*/
+    .nav-aside,footer{
+        padding-left: 11%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-aside a{
+        color: grey;
+        display: flex;
+        align-items: center;
+        gap: 5%;
+    }
+    /*définition de la grille ul-nav-main-videos*/
+    .ul-nav-main-videos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 1%;
+    }
+    
+    .ul-nav-main-videos li{
+        padding-bottom: 30px;
+    }
+}
